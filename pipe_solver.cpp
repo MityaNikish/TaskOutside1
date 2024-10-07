@@ -221,12 +221,12 @@ void PipeSolver::writeGrid(size_t index) const
 	for (size_t i = 0; i < grid_point_.size(); ++i)
 	{
 		p[i] = grid_point_[i].p;
-		ro[i] = grid_point_[i].p;
-		v[i] = grid_point_[i].p;
+		ro[i] = grid_point_[i].ro;
+		v[i] = grid_point_[i].v;
 	}
 
-	write(path / ("treatment\\p\\output_p_" + std::to_string(index) + ".raw"), p);
-	write(path / ("treatment\\ro\\output_ro_" + std::to_string(index) + ".raw"), ro);
-	write(path / ("treatment\\v\\output_v_" + std::to_string(index) + ".raw"), v);
+	write(path / ("treatment\\p\\output_" + std::to_string(index) + ".raw"), p);
+	write(path / ("treatment\\ro\\output_" + std::to_string(index) + ".raw"), ro);
+	write(path / ("treatment\\v\\output_" + std::to_string(index) + ".raw"), v);
 
 }
